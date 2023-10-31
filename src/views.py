@@ -1,12 +1,18 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 
-from app import todos
+#from __init__ import todos
+from src.models import Todos
+from src.schemas import TodosSchema
 
-views = Blueprint(__name__, "views")
+views = Blueprint("views", __name__)
+
+todos_schema = TodosSchema(many=True)
 
 
 @views.route("/")
 def index():
+    todos = Todos.query.all()
+    todos_json = todos_schema.jsonify(todos)
     return render_template("index.html", todos=todos)
 
 
