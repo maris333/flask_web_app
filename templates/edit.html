@@ -5,8 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-     <form action="{{ url_for('views.edit', index=index) }}" method="post">
-        <input type="text" name="todo" value="{{ todo['todo'] }}">
+     <form action="{{ url_for('edit', id=todo.id) }}" method="post">
+        <input type="text" name="todo" value="{{ todo.content }}">
         <button type="submit">Save</button>
     </form>
 </body>

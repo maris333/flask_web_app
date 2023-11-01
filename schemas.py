@@ -1,8 +1,9 @@
 from flask_marshmallow import fields
-from __init__ import ma
+
+from app import ma
 
 
 class TodosSchema(ma.Schema):
     id = fields.fields.Integer()
-    content = fields.fields.Str()
+    todo = fields.fields.Str()
     done = fields.fields.Bool()
