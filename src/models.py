@@ -1,4 +1,4 @@
-from app import db, app
+from src import db
 
 
 class Todos(db.Model):
@@ -9,8 +9,3 @@ class Todos(db.Model):
     def __init__(self, todo, done=False):
         self.todo = todo
         self.done = done
-
-
-def create_db():
-    with app.app_context():
-        db.create_all()

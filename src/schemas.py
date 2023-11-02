@@ -1,6 +1,6 @@
 from flask_marshmallow import fields
 
-from app import ma
+from src import ma
 
 
 class TodosSchema(ma.Schema):
